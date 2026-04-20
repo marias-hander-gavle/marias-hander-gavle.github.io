@@ -1,6 +1,10 @@
 # MkDocs build output
 site/
 
+# Material blog plugin auto-generated files (created during local `mkdocs build`/`mkdocs serve`)
+docs/entries/index.md
+docs/entries/posts/
+
 # Python
 __pycache__/
 *.pyc
