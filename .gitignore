@@ -1,0 +1,19 @@
+# MkDocs build output
+site/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Upload script logs (created on the user's Desktop, but ignore if ever in-repo)
+upload-log-*.txt
