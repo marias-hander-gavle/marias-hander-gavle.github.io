@@ -20,6 +20,15 @@ fi
 
 # Check for gh CLI; install via Homebrew if missing.
 if ! command -v gh >/dev/null 2>&1; then
+  # If brew is installed but not yet on PATH (common right after installing Homebrew),
+  # load its environment from the standard locations.
+  if ! command -v brew >/dev/null 2>&1; then
+    if [ -x /opt/homebrew/bin/brew ]; then
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    elif [ -x /usr/local/bin/brew ]; then
+      eval "$(/usr/local/bin/brew shellenv)"
+    fi
+  fi
   if command -v brew >/dev/null 2>&1; then
     say "→ Installing GitHub CLI via Homebrew..."
     brew install gh || die "Could not install 'gh'. Please install it manually from https://cli.github.com and re-run."
@@ -33,6 +42,10 @@ if ! gh auth status >/dev/null 2>&1; then
   say "→ Signing in to GitHub (a browser will open)..."
   gh auth login --web --git-protocol https --hostname github.com || die "GitHub sign-in failed. Please try again."
 fi
+
+# Configure git to use gh's stored OAuth token as its credential helper.
+# Without this, a later `git clone` over HTTPS may fall through to a password prompt and fail.
+gh auth setup-git 2>/dev/null || die "Could not wire gh credentials into git. Try running 'gh auth setup-git' manually."
 
 # Prompt for username and repo.
 printf "GitHub username: "
