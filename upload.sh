@@ -11,7 +11,20 @@ LOG_DIR="$HOME/Desktop"
 LOG_FILE="$LOG_DIR/upload-log-$(date +%Y-%m-%d-%H%M%S).txt"
 
 say() { printf '%s\n' "$1"; }
+
+# Append a status snapshot to the log so the setup author has useful context.
+log_status_snapshot() {
+  {
+    echo ""
+    echo "--- git status ---"
+    git status 2>&1 | tail -20
+    echo "--- git log -5 ---"
+    git log --oneline -5 2>&1
+  } >> "$LOG_FILE" 2>/dev/null || true
+}
+
 fail() {
+  log_status_snapshot
   say ""
   say "✗ $1"
   say ""
@@ -71,6 +84,10 @@ if ! git push 2> "$LOG_FILE.tmp"; then
     rm -f "$LOG_FILE.tmp"
     fail "GitHub sign-in expired. Please re-run the setup script to sign in again."
   fi
+  if grep -q -i "Could not resolve host\|Failed to connect\|Connection timed out\|Network is unreachable" "$LOG_FILE.tmp"; then
+    rm -f "$LOG_FILE.tmp"
+    fail "Lost internet connection while uploading. Your changes are saved locally — check your Wi-Fi and try again."
+  fi
   rm -f "$LOG_FILE.tmp"
   fail "Something went wrong uploading."
 fi
@@ -78,11 +95,12 @@ rm -f "$LOG_FILE.tmp"
 
 REPO_URL="$(git config --get remote.origin.url 2>/dev/null || echo '')"
 USERNAME="$(printf '%s' "$REPO_URL" | sed -E 's#.*[:/]([^/]+)/[^/]+\.git$#\1#')"
-SITE_URL="https://${USERNAME}.github.io"
 
 say ""
 say "✓ Uploaded! Your site will update in about 1 minute."
-say "  Visit: $SITE_URL"
+if [ -n "$USERNAME" ] && [ "$USERNAME" != "$REPO_URL" ]; then
+  say "  Visit: https://${USERNAME}.github.io"
+fi
 say ""
 read -n 1 -s -r -p "Press any key to close..."
 exit 0
