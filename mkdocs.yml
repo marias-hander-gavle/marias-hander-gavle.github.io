@@ -1,0 +1,47 @@
+site_name: "Her Weekly"
+site_description: "Weekly updates and photos"
+site_url: "https://herusername.github.io"
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+  - blog:
+      blog_dir: entries
+      post_url_format: "{date}/{slug}"
+      post_date_format: long
+      archive: false
+      categories: false
+
+nav:
+  - Home: index.md
+  - Gallery: gallery.md
+
+strict: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
