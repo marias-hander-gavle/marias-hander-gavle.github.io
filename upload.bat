@@ -59,7 +59,10 @@ if errorlevel 1 (
 )
 del "%LOG_FILE%.tmp" >nul 2>&1
 
-if "%HAS_CHANGES%"=="0" (
+set "AHEAD=0"
+for /f %%c in ('git rev-list --count "@{u}..HEAD" 2^>nul') do set "AHEAD=%%c"
+
+if "%HAS_CHANGES%"=="0" if "%AHEAD%"=="0" (
   echo.
   echo ^> No changes to upload -- everything's already up to date.
   echo.
