@@ -16,6 +16,26 @@ if errorlevel 1 (
   exit /b 1
 )
 
+echo -^> Preparing your changes...
+git add -A
+
+set "HAS_CHANGES=0"
+git diff --cached --quiet
+if errorlevel 1 set "HAS_CHANGES=1"
+
+if "%HAS_CHANGES%"=="1" (
+  for /f %%i in ('powershell -NoProfile -Command "Get-Date -Format \"yyyy-MM-dd HH:mm\""') do set COMMIT_TS=%%i
+  echo -^> Saving your changes...
+  git commit -m "Update !COMMIT_TS!" > "%LOG_FILE%.tmp" 2>&1
+  if errorlevel 1 (
+    type "%LOG_FILE%.tmp" >> "%LOG_FILE%"
+    del "%LOG_FILE%.tmp" >nul 2>&1
+    call :fail "Something went wrong saving your changes."
+    exit /b 1
+  )
+  del "%LOG_FILE%.tmp" >nul 2>&1
+)
+
 echo -^> Checking for updates from GitHub...
 git pull --rebase 2> "%LOG_FILE%.tmp"
 if errorlevel 1 (
@@ -39,28 +59,13 @@ if errorlevel 1 (
 )
 del "%LOG_FILE%.tmp" >nul 2>&1
 
-echo -^> Preparing your changes...
-git add -A
-
-git diff --cached --quiet
-if not errorlevel 1 (
+if "%HAS_CHANGES%"=="0" (
   echo.
   echo ^> No changes to upload -- everything's already up to date.
   echo.
   pause
   exit /b 0
 )
-
-for /f %%i in ('powershell -NoProfile -Command "Get-Date -Format \"yyyy-MM-dd HH:mm\""') do set COMMIT_TS=%%i
-echo -^> Saving your changes...
-git commit -m "Update %COMMIT_TS%" > "%LOG_FILE%.tmp" 2>&1
-if errorlevel 1 (
-  type "%LOG_FILE%.tmp" >> "%LOG_FILE%"
-  del "%LOG_FILE%.tmp" >nul 2>&1
-  call :fail "Something went wrong saving your changes."
-  exit /b 1
-)
-del "%LOG_FILE%.tmp" >nul 2>&1
 
 echo -^> Uploading to GitHub...
 git push 2> "%LOG_FILE%.tmp"
