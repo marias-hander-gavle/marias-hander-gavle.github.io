@@ -1,7 +1,5 @@
 # **Marias händer** 
 ## Sankt Pauli katolsk församling Gävle
 
-Hej allihopa! 
-Välkomna till våran hemsida.
-
+![](pictures/IMG-20260405-WA0016.JPEG)
 
