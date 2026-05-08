@@ -3,7 +3,7 @@
 
 ![](pictures/IMG-20260405-WA0016.JPG)
 
-
+![](pictures/Andlig Adoption.pdf)
 
 
 
