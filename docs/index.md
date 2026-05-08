@@ -7,8 +7,14 @@
 
 
 
-Kontakt:
-Ann-Marie Sjöberg
-Tel:  0702288184
+
+
+Kontakt: Ann-Marie Sjöberg (Tel: 0702288184)
+
+Sankt Pauli församling, Södra Rådmansgatan 7, 802 51 Gävle, Sweden
+Kyrkoherde: f. Joakim Breding
+Tel: +46 (0)26 12 31 57), email: gavle@katolskakyrkan.se , Tel: +46 (0)26 12 31 57
+
+
 
 
