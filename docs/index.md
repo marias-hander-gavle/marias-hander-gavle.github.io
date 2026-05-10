@@ -3,6 +3,10 @@
 ### Hemsida under uppbyggnad 
 
 
+
+
+
+
 # Händelser:
 
 - 2026.04.16: utflykt till Jesu hjärtats kapell i Sörforsa 
@@ -25,3 +29,4 @@ Tel: +46 (0)26 12 31 57, email: gavle@katolskakyrkan.se , Tel: +46 (0)26 12 31 5
 
 [def]: pictures/heligamariagavleIMG-20260405-WA0016.JPG
 [def2]: pictures/heligamariagavle.jpg
+[def3]: heligamariagavle.jpg
