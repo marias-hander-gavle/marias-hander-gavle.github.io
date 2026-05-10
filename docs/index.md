@@ -2,7 +2,10 @@
 ## Sankt Pauli katolsk församling Gävle
 ### Hemsida under uppbyggnad 
 
-![](pictures/heligamariagavle.JPG)
+
+![][pictures/heligamariagavle.jpg]
+
+
 
 
 # Händelser:
@@ -23,3 +26,7 @@ Tel: +46 (0)26 12 31 57, email: gavle@katolskakyrkan.se , Tel: +46 (0)26 12 31 5
 
 
 
+
+
+[def]: pictures/heligamariagavleIMG-20260405-WA0016.JPG
+[def2]: pictures/heligamariagavle.jpg
