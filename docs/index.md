@@ -1,5 +1,6 @@
 # **Marias händer** 
 ## Sankt Pauli katolsk församling Gävle
+### Hemsida under uppbyggnad 
 
 ![](pictures/IMG-20260405-WA0016.JPG)
 
@@ -13,7 +14,7 @@
 
 
 
-# Kontakt: Ann-Marie Sjöberg (Tel: 0702288184)
+## Kontakt: Ann-Marie Sjöberg (Tel: 0702288184)
 
 Sankt Pauli församling - Kyrkoherde: f. Joakim Breding - Adress: Södra Rådmansgatan 7, 802 51 Gävle, Sweden 
 
