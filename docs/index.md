@@ -3,11 +3,6 @@
 ### Hemsida under uppbyggnad 
 
 
-![][pictures/heligamariagavle.jpg]
-
-
-
-
 # Händelser:
 
 - 2026.04.16: utflykt till Jesu hjärtats kapell i Sörforsa 
