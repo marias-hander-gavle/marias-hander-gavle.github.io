@@ -1,6 +1,6 @@
 # **Marias händer** 
 ## Sankt Pauli katolsk församling Gävle
-### Hemsida under uppbyggnad 
+
 
 
 ![Heliga Maria](pictures/heligamariagavle.jpg)
