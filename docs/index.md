@@ -3,7 +3,7 @@
 ### Hemsida under uppbyggnad 
 
 
-![](pictures/heligamariagavle.jpg)
+![Heliga Maria](pictures/heligamariagavle.jpg)
 
 
 
