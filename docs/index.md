@@ -2,7 +2,7 @@
 ## Sankt Pauli katolsk församling Gävle
 ### Hemsida under uppbyggnad 
 
-![](pictures/IMG-20260405-WA0016.JPG)
+![](pictures/heligamariagavle.JPG)
 
 
 # Händelser:
@@ -18,7 +18,7 @@
 
 Sankt Pauli församling - Kyrkoherde: f. Joakim Breding - Adress: Södra Rådmansgatan 7, 802 51 Gävle, Sweden 
 
-Tel: +46 (0)26 12 31 57), email: gavle@katolskakyrkan.se , Tel: +46 (0)26 12 31 57
+Tel: +46 (0)26 12 31 57, email: gavle@katolskakyrkan.se , Tel: +46 (0)26 12 31 57
 
 
 
