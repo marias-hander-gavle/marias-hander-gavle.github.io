@@ -9,7 +9,7 @@
 
 # Händelser:
 
-- 2026.04.16: utflykt till Jesu hjärtats kapell i Sörforsa 
+- 2026.04.16: utflykt till Jesu Hjärtas katolska kapell i Sörforsa 
 - 2026.05.31: Andlig adoption (adoption av ett ofött barn), läs mer på
 [Andlig adoption](https://www.markdownguide.org/cheat-sheet/)
 
